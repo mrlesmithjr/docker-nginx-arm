@@ -1,0 +1,16 @@
+FROM arm32v7/debian
+
+LABEL maintainer="mrlesmithjr@gmail.com"
+
+RUN apt-get update && \
+  apt-get install -y --no-install-recommends nginx
+
+# RUN mkdir -p /run/nginx
+
+# COPY config/etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
+
+# COPY config/usr/share/nginx/html/index.html /usr/share/nginx/html/index.html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
